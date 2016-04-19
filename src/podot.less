@@ -1,0 +1,21 @@
+.podot {
+  height: 2px;
+  width: 2px;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 10;
+  animation: podot-tapeffect 1s ease-out;
+  background: #93def7;
+  pointer-events: none;
+}
+
+@keyframes podot-tapeffect {
+  0% {
+    box-shadow: 0 0 0 0px #93def7;
+  }
+
+  100% {
+    box-shadow: 0 0 0 50px #93def7;
+    opacity: 0;
+  }
+}

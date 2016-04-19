@@ -1,0 +1,15 @@
+{
+  "name": "podot",
+  "version": "0.0.1",
+  "description": "H5 触碰小气泡",
+  "devDependencies": {
+    "uglify-js": "^2.4.15",
+    "jdists": "^1.3.3"
+  },
+  "dependencies": {},
+  "scripts": {
+    "_dist": "jdists src/podot.js -o podot.js",
+    "_compress": "uglifyjs podot.js -o podot.min.js -p 5 -c -m",
+    "dist": "npm run _dist && npm run _compress"
+  }
+}
