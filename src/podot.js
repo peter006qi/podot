@@ -8,8 +8,8 @@
     config = {};
   }
   config.lifetime = config.lifetime || 1000;
-  config.color = config.color || 1000;
-
+  config.color = config.color || "#93def7";
+  config.size = config.size || "30px"
   document.addEventListener('touchstart', function(e) {
     var dot = document.createElement('div');
     dot.className = 'podot';
@@ -18,23 +18,14 @@
     document.body.appendChild(dot);
     setTimeout(function () {
       dot.parentNode.removeChild(dot);
-    }, config.lifetime || 1000);
+    }, config.lifetime);
   });
 
   var css = /*<jdists encoding="less,autoprefixer,clean-css,quoted" import="podot.less" />*/
-    .replace(/50px/, config.size).replace(/#93def7/g, config.color);
+    .replace(/50px/g, config.size).replace(/#93def7/g, config.color);
   var head = document.querySelector('head') || document.body;
   var style = document.createElement('style');
   style.appendChild(document.createTextNode(css));
   head.appendChild(style);
-
-  // $('body').on('touchstart', function(e) {
-  //   var left = e.touches[0].pageX;
-  //   var top = e.touches[0].pageY;
-  //   $(this).append('<div class="dot" style="top:' + top + 'px;left:' + left + 'px;"></div>')
-  //   setTimeout(function() {
-  //     $('#container').find(".dot").eq(0).remove();
-  //   }, 1100);
-  // });
 
 })();

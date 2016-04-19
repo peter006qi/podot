@@ -1,0 +1,33 @@
+{
+  "name": "podot",
+  "version": "0.0.1",
+  "homepage": "https://github.com/peter006_qi/podot",
+  "authors": [
+    {
+      "name": "peter006_qi",
+      "url": "http://weibo.com/peter006_qi"
+    }
+  ],
+  "description": "H5 触碰小气泡",
+  "main": "podot.js",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "popo"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "ignore": [
+    "tests",
+    "src",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ]
+}
