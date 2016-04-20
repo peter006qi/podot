@@ -6,6 +6,8 @@
 		  color为气泡的颜色（只能为单色）
 		  lifetime为气泡从出现到消失的时间
 完整引用eg：
+```
 <script src="bower_components/podot/podot.js" podot-config='
 {"size":"164px","color":"#ff6600","lifetime":1000}'></script>
+```
           
