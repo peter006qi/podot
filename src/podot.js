@@ -9,12 +9,22 @@
   }
   config.lifetime = config.lifetime || 1000;
   config.color = config.color || "#93def7";
-  config.size = config.size || "30px"
-  document.addEventListener('touchstart', function(e) {
+  config.size = config.size || "30px";
+  config.event = config.event || "mousedown";
+  document.addEventListener(config.event, function(e) {
     var dot = document.createElement('div');
     dot.className = 'podot';
-    dot.style.left = e.touches[0].pageX + 'px';
-    dot.style.top = e.touches[0].pageY + 'px';
+    var podot_left;
+    var podot_top;
+    if (config.event.indexOf("mouse")==-1) {
+      podot_left = e.touches[0].pageX;
+      podot_top = e.touches[0].pageY;
+    }else{
+      podot_left = e.clientX;
+      podot_top = e.clientY;
+    }
+    dot.style.left = podot_left + 'px';
+    dot.style.top = podot_top + 'px';
     document.body.appendChild(dot);
     setTimeout(function () {
       dot.parentNode.removeChild(dot);
