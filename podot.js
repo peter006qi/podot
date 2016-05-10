@@ -1,6 +1,8 @@
 (function() {
   var script = document.querySelector('script[podot-config]');
   var config;
+  var head = document.querySelector('head') || document.body;
+  var style = document.createElement('style');
   try {
     config = JSON.parse(script.getAttribute('podot-config'));
   } catch (ex) {
@@ -30,10 +32,8 @@
     }, config.lifetime);
   });
   var anim_time = config.lifetime/1000+"s";
-  var css = ".podot{height:1px;width:1px;border-radius:50%;position:absolute;z-index:10;-webkit-animation:podot-tapeffect 1s ease-out;animation:podot-tapeffect 1s ease-out;background:#93def7;pointer-events:none}@-webkit-keyframes podot-tapeffect{0%{box-shadow:0 0 0 0 #93def7}100%{box-shadow:0 0 0 50px #93def7;opacity:0}}@keyframes podot-tapeffect{0%{box-shadow:0 0 0 0 #93def7}100%{box-shadow:0 0 0 50px #93def7;opacity:0}}"
+  var css = ".podot{height:2px;width:2px;border-radius:100%;position:absolute;z-index:10;-webkit-animation:podot-tapeffect 1s ease-out;animation:podot-tapeffect 1s ease-out;background:#93def7;opacity:.6;pointer-events:none}@-webkit-keyframes podot-tapeffect{0%{box-shadow:0 0 0 0 #93def7}100%{box-shadow:0 0 0 50px #93def7;opacity:0}}@keyframes podot-tapeffect{0%{box-shadow:0 0 0 0 #93def7}100%{box-shadow:0 0 0 50px #93def7;opacity:0}}"
     .replace(/50px/g, config.size).replace(/#93def7/g, config.color).replace(/1s/g,anim_time);
-  var head = document.querySelector('head') || document.body;
-  var style = document.createElement('style');
   style.appendChild(document.createTextNode(css));
   head.appendChild(style);
 })();

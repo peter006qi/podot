@@ -2,6 +2,8 @@
 
   var script = document.querySelector('script[podot-config]');
   var config;
+  var head = document.querySelector('head') || document.body;
+  var style = document.createElement('style');
   try {
     config = JSON.parse(script.getAttribute('podot-config'));
   } catch (ex) {
@@ -33,9 +35,6 @@
   var anim_time = config.lifetime/1000+"s";
   var css = /*<jdists encoding="less,autoprefixer,clean-css,quoted" import="podot.less" />*/
     .replace(/50px/g, config.size).replace(/#93def7/g, config.color).replace(/1s/g,anim_time);
-  var head = document.querySelector('head') || document.body;
-  var style = document.createElement('style');
   style.appendChild(document.createTextNode(css));
   head.appendChild(style);
-
 })();
