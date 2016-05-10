@@ -1,6 +1,6 @@
 {
   "name": "podot",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "H5 触碰小气泡",
   "devDependencies": {
     "uglify-js": "^2.4.15",
