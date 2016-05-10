@@ -1,5 +1,4 @@
 (function() {
-
   var script = document.querySelector('script[podot-config]');
   var config;
   var head = document.querySelector('head') || document.body;
